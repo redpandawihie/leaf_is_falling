@@ -1,0 +1,74 @@
+/* 🌊 General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* 📌 Form Styling */
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+/* 📝 Form Labels */
+label {
+    display: block;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* ✏️ Input Fields */
+input[type="text"], input[type="email"], input[type="password"], input[type="submit"] {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* 📩 Submit Button */
+input[type="submit"] {
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #0056b3;
+}
+
+/* 📸 QR Code Styling */
+.qr-container {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* ✨ Heading Styles */
+h2, h3 {
+    font-size: 28px;
+    color: #00aaff;
+}
+
+/* 🔗 Links */
+a {
+    color: #00c3ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

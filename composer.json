@@ -1,0 +1,19 @@
+{
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "phpgangsta/googleauthenticator": "dev-master"
+    },
+    "name": "mittprosjekt/mittprosjekt",
+    "description": "En sikker PHP-side med tofaktorautentisering.",
+    "autoload": {
+        "psr-4": {
+            "Mittprosjekt\\Mittprosjekt\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Arina"
+        }
+    ]
+}
