@@ -1,4 +1,5 @@
 <?php
+include 'navbar.php';
 // Force HTTPS Redirect
 if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === 'off') {
     $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
@@ -42,14 +43,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "✅ PASSWORD MATCH!<br>";
 
         $ga = new PHPGangsta_GoogleAuthenticator();
-        $checkResult = $ga->verifyCode($secret, $otp, 2); // 2 = 60 sekunders margin
-
+        $generatedOtp = $ga->getCode($secret); // Generate expected OTP
+        echo "DEBUG: Expected OTP: " . $generatedOtp . "<br>";
+        echo "DEBUG: Entered OTP: " . $otp . "<br>";
+        
+        $checkResult = $ga->verifyCode($secret, $otp, 2); // 2 = 60 seconds margin
         if ($checkResult) {
             $_SESSION["loggedin"] = true;
             $_SESSION["brukernavn"] = $brukernavn;
-            echo "Innlogging vellykket!";
+            echo "✅ 2FA Verification Successful!";
+            
+            // Redirect to new page with picture
+            header("Location: newpage.php");
+            exit(); // Stop further execution
         } else {
-            echo "Feil engangskode. Prøv igjen.";
+            echo "❌ Feil engangskode. Prøv igjen.";
         }
     } else {
         echo "❌ PASSWORD DOES NOT MATCH!<br>";
